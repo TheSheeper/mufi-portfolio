@@ -1,0 +1,86 @@
+---
+import { Image } from "astro:assets"
+import {Palette, Sparkles, GraduationCap} from "@lucide/astro"
+
+const educationData = [
+  {
+    degree: "Bachelor of Arts",
+    field: "Illustration & Visual Arts",
+    institution: "Art Academy",
+    location: "Creative City",
+    year: "2020",
+    description: "Specialized in illustration, character design, and visual storytelling techniques.",
+    icon: Palette,
+  },
+  {
+    degree: "Certificate",
+    field: "Digital Illustration",
+    institution: "Online Design School",
+    location: "Remote",
+    year: "2021",
+    description: "Advanced digital techniques using Procreate, Photoshop, and Illustrator.",
+    icon: Sparkles,
+  },
+  {
+    degree: "Workshops",
+    field: "Character Design & Branding",
+    institution: "Various Instructors",
+    location: "Worldwide",
+    year: "Ongoing",
+    description: "Continuous learning through workshops, courses, and self-directed study.",
+    icon: GraduationCap,
+  },
+]
+---
+
+<section id="education" class="py-16 sm:py-20 md:py-24 px-4 sm:px-6 bg-secondary/30 relative">
+      {/* Decorative star */}
+      <div class="absolute bottom-20 left-4 sm:left-10 w-8 sm:w-10 h-8 sm:h-10 hidden md:block">
+        <Image 
+          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mufi%20Brand%20insta%20iconos-09-4SQ2zn2oUDnuALJjhcN5gzfTJ1QWX9.jpg"
+          alt=""
+          width={40}
+          height={40}
+          class="rounded-lg"
+        />
+      </div>
+
+      <div class="max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
+          <div class="lg:col-span-1 text-center lg:text-left">
+            <h2 class="font-serif text-2xl sm:text-3xl font-medium text-foreground mb-4">Education</h2>
+            <div class="w-12 h-1 bg-primary rounded-full mx-auto lg:mx-0" />
+          </div>
+
+          <div class="lg:col-span-2">
+            <div class="space-y-4 sm:space-y-6">
+              {educationData.map((edu, index) => (
+                <div
+                  class="group bg-card p-4 sm:p-6 rounded-xl sm:rounded-2xl border border-border hover:border-primary/30 transition-colors"
+                >
+                  <div class="flex flex-col sm:flex-row gap-4">
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors mx-auto sm:mx-0">
+                      <edu.icon class="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
+                    </div>
+
+                    <div class="space-y-1 sm:space-y-2 flex-1 text-center sm:text-left">
+                      <div class="flex flex-col sm:flex-row sm:flex-wrap sm:items-baseline gap-x-4 gap-y-1">
+                        <h3 class="font-serif text-lg sm:text-xl font-medium text-foreground">
+                          {edu.degree}
+                        </h3>
+                        <span class="text-sm text-primary font-medium">{edu.year}</span>
+                      </div>
+                      <p class="text-sm sm:text-base text-foreground font-medium">{edu.field}</p>
+                      <p class="text-xs sm:text-sm text-muted-foreground">
+                        {edu.institution} · {edu.location}
+                      </p>
+                      <p class="text-sm text-muted-foreground pt-1">{edu.description}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>

@@ -1,0 +1,140 @@
+---
+import { Image } from "astro:assets";
+import LogoMufi from "../assets/Logo.png"
+import LogoTexto from "../assets/images/Logo texto_negro.png"
+import Icon01 from "../assets/images/icon_01.jpg"
+import Icon02 from "../assets/images/icon_02.jpg"
+import Icon03 from "../assets/images/icon_03.jpg"
+import Icon04 from "../assets/images/icon_04.jpg"
+import Icon05 from "../assets/images/icon_05.jpg"
+---
+
+<section
+    class="min-h-screen flex flex-col justify-center px-4 sm:px-6 pt-20 pb-12 relative overflow-hidden"
+>
+    {/* Decorative stars - hidden on mobile, visible on tablet+ */}
+    <div
+        class="absolute top-32 left-4 sm:left-10 w-8 sm:w-10 h-8 sm:h-10 hidden sm:block"
+    >
+        <Image
+            src={Icon01}
+            alt=""
+            class="rounded-lg w-full h-full object-cover"
+        />
+    </div>
+    <div
+        class="absolute top-48 right-4 sm:right-20 w-8 sm:w-10 h-8 sm:h-10 hidden sm:block"
+    >
+        <Image
+            src={Icon02}
+            alt=""
+            class="rounded-lg w-full h-full object-cover"
+        />
+    </div>
+    <div
+        class="absolute bottom-40 left-1/4 w-6 sm:w-8 h-6 sm:h-8 hidden md:block"
+    >
+        <Image
+            src={Icon03}
+            alt=""
+            class="rounded-lg w-full h-full object-cover"
+        />
+    </div>
+
+    <div class="max-w-6xl mx-auto w-full">
+        <div
+            class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center"
+        >
+            {/* Character image - shown first on mobile */}
+            <div
+                class="relative flex items-center justify-center order-1 lg:order-2"
+            >
+                <div
+                    class="relative w-48 h-48 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80"
+                >
+                    <Image
+                        src={LogoMufi}
+                        alt="Mufi character"
+                        class="object-contain"
+                    />
+                </div>
+                {/* Decorative elements around the character */}
+                <div
+                    class="absolute top-0 sm:top-4 right-4 sm:right-8 w-8 sm:w-12 h-8 sm:h-12"
+                >
+                    <Image
+                        src={Icon04}
+                        alt=""
+                        class="rounded-lg w-full h-full object-cover"
+                    />
+                </div>
+                <div
+                    class="absolute bottom-4 sm:bottom-8 left-0 sm:left-4 w-8 sm:w-10 h-8 sm:h-10"
+                >
+                    <Image
+                        src={Icon05}
+                        alt=""
+                        class="rounded-lg w-full h-full object-cover"
+                    />
+                </div>
+            </div>
+
+            {/* Text content */}
+            <div
+                class="space-y-6 sm:space-y-8 order-2 lg:order-1 text-center lg:text-left"
+            >
+                <div class="space-y-4">
+                    <p
+                        class="text-primary text-xs sm:text-sm tracking-widest uppercase font-medium"
+                    >
+                        Arte e Ilustracion
+                    </p>
+                    <div
+                        class="max-w-xs sm:max-w-sm md:max-w-md mx-auto lg:mx-0"
+                    >
+                        <Image
+                            src={LogoTexto}
+                            alt="Mufi - Arte e Ilustracion"
+                            class="w-full h-auto"
+                            priority
+                        />
+                    </div>
+                    <p
+                        class="text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed max-w-lg mx-auto lg:mx-0"
+                    >
+                        Creating colorful visual stories through illustration,
+                        character design, and playful branding that brings joy
+                        to every project.
+                    </p>
+                </div>
+
+                <div
+                    class="flex flex-wrap justify-center lg:justify-start gap-2 sm:gap-4 text-xs sm:text-sm"
+                >
+                    <span
+                        class="px-3 sm:px-4 py-1.5 sm:py-2 bg-primary/10 text-primary rounded-full font-medium"
+                    >
+                        Illustration
+                    </span>
+                    <span
+                        class="px-3 sm:px-4 py-1.5 sm:py-2 bg-accent/10 text-accent rounded-full font-medium"
+                    >
+                        Character Design
+                    </span>
+                    <span
+                        class="px-3 sm:px-4 py-1.5 sm:py-2 bg-secondary text-secondary-foreground rounded-full font-medium"
+                    >
+                        Branding
+                    </span>
+                </div>
+
+                <a
+                    href="#portfolio"
+                    class="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors group"
+                >
+                    View my work
+                </a>
+            </div>
+        </div>
+    </div>
+</section>

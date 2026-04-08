@@ -1,0 +1,95 @@
+---
+import { Image } from "astro:assets"
+import { Heart, Star, Users, Palette } from "@lucide/astro"
+
+const skills = [
+  {
+    title: "Character Design",
+    description: "Creating lovable, memorable characters",
+    icon: Heart,
+  },
+  {
+    title: "Illustration",
+    description: "Vibrant, colorful artwork for any project",
+    icon: Palette,
+  },
+  {
+    title: "Brand Identity",
+    description: "Cohesive visual systems that stand out",
+    icon: Star,
+  },
+  {
+    title: "Collaboration",
+    description: "Working closely with clients to bring ideas to life",
+    icon: Users,
+  },
+]
+
+const clients = [
+  "Editorial Projects",
+  "Small Business Branding",
+  "Children's Book Illustration",
+  "Social Media Content",
+  "Merchandise Design",
+  "Personal Commissions",
+]
+---
+
+<section id="achievements" class="py-16 sm:py-20 md:py-24 px-4 sm:px-6 relative">
+      <div class="max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
+          <div class="lg:col-span-1 text-center lg:text-left">
+            <h2 class="font-serif text-2xl sm:text-3xl font-medium text-foreground mb-4">
+              What I Do
+            </h2>
+            <div class="w-12 h-1 bg-primary rounded-full mx-auto lg:mx-0" />
+          </div>
+
+          <div class="lg:col-span-2 space-y-8 sm:space-y-12">
+            {/* Skills Grid */}
+            <div>
+              <h3 class="text-xs sm:text-sm tracking-widest uppercase text-muted-foreground mb-4 sm:mb-6 text-center lg:text-left">
+                Skills & Services
+              </h3>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+                {skills.map((skill, index) => (
+                  <div
+                    class="group p-4 sm:p-6 bg-card rounded-xl sm:rounded-2xl border border-border hover:border-primary/30 transition-colors"
+                  >
+                    <div class="flex items-start gap-3 sm:gap-4">
+                      <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors">
+                        <skill.icon class="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
+                      </div>
+                      <div class="space-y-0.5 sm:space-y-1">
+                        <h4 class="font-medium text-foreground text-base sm:text-lg">
+                          {skill.title}
+                        </h4>
+                        <p class="text-xs sm:text-sm text-muted-foreground">
+                          {skill.description}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Project Types */}
+            <div>
+              <h3 class="text-xs sm:text-sm tracking-widest uppercase text-muted-foreground mb-4 sm:mb-6 text-center lg:text-left">
+                Project Types
+              </h3>
+              <div class="flex flex-wrap justify-center lg:justify-start gap-2 sm:gap-3">
+                {clients.map((client, index) => (
+                  <span
+                    class="px-3 sm:px-4 py-1.5 sm:py-2 bg-secondary text-secondary-foreground rounded-full text-xs sm:text-sm font-medium"
+                  >
+                    {client}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>

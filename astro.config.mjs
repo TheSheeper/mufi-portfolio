@@ -1,10 +1,26 @@
 // @ts-check
 import tailwindcss from '@tailwindcss/vite';
-import { defineConfig } from 'astro/config';
+import { defineConfig, fontProviders } from 'astro/config';
+import icon from "astro-icon"
+
+import preact from '@astrojs/preact';
 
 // https://astro.build/config
 export default defineConfig({
-    vite: {
+  vite: {
     plugins: [tailwindcss()],
   },
+  integrations: [preact(), icon()],
+  fonts: [{
+    provider: fontProviders.local(),
+    name: "TropiLand",
+    cssVariable: "--font-tropi-land",
+    options: {
+      variants: [{
+        src: ['./src/assets/fonts/Tropi Land.ttf'],
+        weight: 'normal',
+        style: 'normal'
+      }]
+    }
+  }]
 });
