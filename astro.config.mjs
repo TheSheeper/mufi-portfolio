@@ -7,6 +7,8 @@ import preact from '@astrojs/preact';
 
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://thesheeper.github.io',
+  base: '/mufi-portfolio',
   vite: {
     plugins: [tailwindcss()],
   },

@@ -2,6 +2,7 @@
 import { Image } from "astro:assets"
 import {Mail, MapPin} from "@lucide/astro"
 import { Icon } from 'astro-icon/components'
+import Icon01 from "../assets/images/icon_01.jpg"
 
 const socialLinks = [
   { href: "https://www.instagram.com/mufikingdom/", label: "Instagram", iconName: "instagram" },
@@ -13,10 +14,8 @@ const socialLinks = [
       {/* Decorative star */}
       <div class="absolute top-12 right-4 sm:right-20 w-12 sm:w-16 h-12 sm:h-16 hidden md:block">
         <Image 
-          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mufi%20Brand%20insta%20iconos-06-C7qdgCbF9zj8gc4I06MTYQpEUM2jqw.jpg"
+          src={Icon01}
           alt=""
-          width={64}
-          height={64}
           class="rounded-xl"
         />
       </div>
